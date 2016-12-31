@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ChatMessages from './components/ChatMessages'
+import AddMessage from './components/AddMessage'
 
 export default class App extends Component {
   render() {
@@ -11,8 +12,9 @@ export default class App extends Component {
     ] 
 
     return (
-      <div className="App">
+      <div className="app">
         <ChatMessages data={messages} />
+        <AddMessage />
       </div>
     );
   }
