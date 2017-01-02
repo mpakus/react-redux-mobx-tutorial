@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import DevTools from 'mobx-react-devtools'
 import './App.css';
 import ChatMessages from './components/ChatMessages'
 import AddMessage from './components/AddMessage'
+import AppStore from './AppStore'
+
+// remove window for prod
+let store = window.store = new AppStore()
 
 export default class App extends Component {
   render() {
-    let messages = [
-      {name: 'MpaK', text: 'People are always asking me if I know Tyler Durden.'},
-      {name: 'Tyler', text: "I am Jack's wasted life."},
-      {name: 'Marla', text: "When you have insomnia, you're never really asleep... and you're never really awake."}      
-    ] 
-
     return (
       <div className="app">
-        <ChatMessages data={messages} />
-        <AddMessage />
+        <ChatMessages store={store} />
+        <AddMessage store={store} />
+        <DevTools />
       </div>
     );
   }
