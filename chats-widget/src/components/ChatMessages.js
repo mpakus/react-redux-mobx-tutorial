@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import './ChatMessages.scss';
+import './ChatMessages.scss'
 
 @observer
 export default class ChatMessages extends Component {
